@@ -7,5 +7,5 @@ function calcularImc (altura, peso){
     return peso / (altura * altura)
 }
 
-console.log(calcularImc(altura, peso))
+console.log(calcularImc(altura, peso).toFixed(2))
 
