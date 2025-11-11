@@ -1,5 +1,5 @@
 var texto = "Contato Joana, CPF:506.967.532-23: A empresax, voces tem um funcionario ladrão que tentou burlar o sistema de segurança para que a empresax fosse difamada."
-var cpfRegex = /\b\d{3}\.?\d{3}\.?\d{3}-?\d{2}\b/g;
+var cpfRegex = /\d{3}\.?\d{3}\.?\d{3}-?\d{2}/g;
 /*
 if (texto.includes("empresax") && texto.includes("ladrão") &&
     texto.includes("burlar")) {
@@ -11,8 +11,8 @@ if (texto.includes("empresax") && texto.includes("ladrão") &&
 */
 
 function corrigirTexto (texto) {
-    if (texto.includes("empresax") && 
-    texto.includes("ladrão") &&
+    if (texto.includes("empresax") || 
+    texto.includes("ladrão") ||
     texto.includes("burlar")) {
     textoCorrigido = texto.replaceAll("empresax", "[Razão Social]")
     .replaceAll("ladrão", "[Mau-caráter]")
