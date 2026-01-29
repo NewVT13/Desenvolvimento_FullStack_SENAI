@@ -4,66 +4,128 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Tabela Nutricional</title>
+		<style>
+			body {
+				background-color: #e1ebeb;
+			}
+			.container_pagina {
+				background-color: #fff;
+				padding: 10px;
+				width: 90%;
+				margin: 0 auto;
+			}
+
+			.container_nome_receita {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.nome_receita {
+				margin-left: 20px;
+			}
+			.container_imagem_receita {
+				display: flex;
+				justify-content: center;
+			}
+			.imagem_receita {
+				border: 10px rgb(226, 219, 219) solid;
+				border-radius: 10px;
+			}
+			.secao_pagina {
+				font-size: 22px;
+				font-weight: bold;
+				color: #246b9b;
+				border-left: 2px #246b9b solid;
+				padding: 5px;
+			}
+
+			.tabela_nutricional {
+				width: 50%;
+				border-collapse: collapse;
+			}
+			.tabela_nutricional thead {
+				background-color: #246b9b;
+				color: #fff;
+			}
+			.tabela_nutricional tbody {
+				font-size: 18px;
+				background-color: beige;
+			}
+			.tabela_nutricional tr:hover {
+				background-color: red;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Frango Grelhado com arroz</h1>
+		<div class="container_pagina">
+			<div class="container_nome_receita">
+				<img
+					src="../assets/chicken-leg.png"
+					alt="imagem de uma coxa de frango"
+					width="30px"
+				/>
+				<h1 class="nome_receita">Frango Grelhado com arroz</h1>
+			</div>
+			<div class="container_imagem_receita">
+				<img
+					src="../assets/Frango grelhado.png"
+					alt="Frango Grelhado"
+					width="300px"
+					class="imagem_receita"
+				/>
+			</div>
+			<h2 class="secao_pagina">Descrição do prato</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium qui
+				exercitationem suscipit rem distinctio culpa cumque, quia similique vel sed
+				doloremque perspiciatis aperiam, eius et voluptatibus voluptate delectus?
+				Blanditiis, qui.
+			</p>
 
-		<img
-			src="../assets/Frango grelhado.png"
-			alt="Frango Grelhado"
-			width="300px"
-		/>
+			<h2 class="secao_pagina">Informações Nutricionais (por porção)</h2>
+			<table class="tabela_nutricional" border="1">
+				<thead>
+					<tr>
+						<th>Nutrientes</th>
+						<th>Quantidade</th>
+						<th>%VD*</th>
+					</tr>
+					<thead></thead>
+				</thead>
 
-		<h2>Descrição do prato</h2>
-		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium qui
-			exercitationem suscipit rem distinctio culpa cumque, quia similique vel sed
-			doloremque perspiciatis aperiam, eius et voluptatibus voluptate delectus?
-			Blanditiis, qui.
-		</p>
-
-		<h2>Informações Nutricionais (por porção)</h2>
-		<table border="1">
-			<thead>
-				<tr>
-					<th>Nutrientes</th>
-					<th>Quantidade</th>
-					<th>%VD*</th>
-				</tr>
-				<thead></thead>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>calorias</td>
-					<td>450kcal</td>
-					<td>22%</td>
-				</tr>
-				<tr>
-					<td>Proteinas</td>
-					<td>45g</td>
-					<td>60%</td>
-				</tr>
-				<tr>
-					<td>carbooidratos</td>
-					<td>48g</td>
-					<td>16%</td>
-				</tr>
-				<tr>
-					<td>gorduras totais</td>
-					<td>6g</td>
-					<td>9%</td>
-				</tr>
-				<tr>
-					<td>gorduras Saturadas</td>
-					<td>1.5g</td>
-					<td>8%</td>
-				</tr>
-			</tbody>
-		</table>
-		<p>
-			*VD = Valor Diário | Baseado em uma dieta de 2.000 calorias diárias | Valores
-			aproximados
-		</p>
+				<tbody>
+					<tr>
+						<td>calorias</td>
+						<td>450kcal</td>
+						<td>22%</td>
+					</tr>
+					<tr>
+						<td>Proteinas</td>
+						<td>45g</td>
+						<td>60%</td>
+					</tr>
+					<tr>
+						<td>carbooidratos</td>
+						<td>48g</td>
+						<td>16%</td>
+					</tr>
+					<tr>
+						<td>gorduras totais</td>
+						<td>6g</td>
+						<td>9%</td>
+					</tr>
+					<tr>
+						<td>gorduras Saturadas</td>
+						<td>1.5g</td>
+						<td>8%</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				*VD = Valor Diário | Baseado em uma dieta de 2.000 calorias diárias |
+				Valores aproximados
+			</p>
+		</div>
 	</body>
 </html>
