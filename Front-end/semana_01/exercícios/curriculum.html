@@ -4,47 +4,135 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Meu curriculum</title>
+		<style>
+			body{
+				background-color: #e1ebeb;
+			}
+			.container_pagina{
+				background-color: #ffffff;
+				padding: 10px;
+				border-radius: 8px;
+				width: 70%;
+				margin: 0 auto;
+			}
+			.nome_pessoa{
+				color: #246b9b;
+				font-size: 34px;
+				margin-bottom: 5px;
+				text-align: center;
+				margin: 5px;
+			}
+			.nome_profissao{
+				font-size: 24px;
+				color: #464444;
+				text-align: center;
+				margin: 0;
+			}
+			.container_informação_contato{
+				display: flex;
+
+			}
+			.informação_contato{
+				font-size: 16px;
+				color: #3498bd;
+				margin: 10px;
+			}
+			.link_contato{
+				text-decoration: none;
+				color: #60afe3;
+			}
+			.secao_curriculo {
+				font-size: 28px;
+				color: #3498db;
+				font-weight: bold;
+				border-left: 5px #3498db solid;
+				padding: 5px;
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+			.descricao_resumo_profissional{
+				font-size: 18px;
+				text-align: justify;
+				color: #464444;
+				margin-bottom: 20px;
+				}
+				.cargo_experiencia{
+					font-size: 16px;
+					color:#464444;
+					margin: 0;
+					}
+				.empresas_experiencias{
+					font-size: 16px;
+					color: #3498db;
+					margin: 0;
+				}	
+				.periodo_experiencia{
+					font-size: 15px;
+					color:#a49e9e;
+					margin: 0;
+				}
+				.lista_experiencia{
+					font-size: 14px;
+					color: #464444;
+
+				}
+				.separador{
+					border: 0.5px #3498bd solid;
+				}
+				
+		</style>
 	</head>
 	<body>
-		<h1 style="color: #4592c2;">Vinícius T Moura</h1>
-		<p><b> Desenvolvedor Full Stack</p></b> 
-		<p>Email:<a href="mailto:vinicius.m@gmail.com">vinicius.m@gmail.com</a></p>
-		<p>Telefone:<a href="tel:416651236546">(41)665123-6546</a></p>
-		<p>
-			Linkedin:<a href="linkedin.com/in/vtdev" target="_blank"
+		<div class="container_pagina">
+		<h1 class="nome_pessoa ">Vinícius T Moura</h1>
+		<p class="nome_profissao"><b> Desenvolvedor Full Stack</p></b> 
+		<div class="container_informação_contato">
+		<p class="informação_contato">Email:<a class="
+			link_contato" href="mailto:vinicius.m@gmail.com">vinicius.m@gmail.com</a></p>
+		<p class=" informação_contato">Telefone:<a class="
+			link_contato" href="tel:416651236546">(41)665123-6546</a></p>
+		</div>
+		<div class="container_informação_contato">
+			<p class=" informação_contato">
+			Linkedin:<a class="
+			link_contato" href="linkedin.com/in/vtdev" target="_blank"
 				>linkedin.com/in/vtdev</a
 			>
 		</p>
-		<p>GitHub:<a href="github.com/vtdev" target="_blank">github.com/vtdev</a></p>
-		<p>Curitiba, PR - Brasil</p>
-		<hr />
-		<h2>Resumo profissional</h2>
-		<p>
+		<p class=" informação_contato">GitHub:<a class="
+			link_contato" href="github.com/vtdev" target="_blank">github.com/vtdev</a></p>
+		</div>
+			<p>Curitiba, PR - Brasil</p>
+		<div class="separador"></div>
+		<h2 class="secao_curriculo">Resumo profissional</h2>
+		<p class="
+		descricao_resumo_profissional">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate numquam
 			placeat, eveniet laborum soluta ea deleniti enim aliquid nostrum officiis
 			voluptate fuga eos nam quibusdam eligendi assumenda. Officiis, blanditiis
 			cum.
 		</p>
-		<h2>Experiência Profissional</h2>
-		<h3>Desenvolvedor Full Stack Sênior</h3>
-		<p><b>Tech solutions ltda</b> - São Paulo, SP</p>
-		<p>Março 2021 - Presente</p>
-		<ul>
+		<h2 class="secao_curriculo">Experiência Profissional</h2>
+		<h3 class="cargo_experiencia">Desenvolvedor Full Stack Sênior</h3>
+		<p class="empresas_experiencias">Tech solutions ltda - São Paulo, SP</p>
+		<p class="periodo_experiencia">Março 2021 - Presente</p>
+		<ul class="lista_experiencia">
 			<li>Desenvolvimento de aplocações wev usando React e Node.js</li>
 			<li>Implementação de APIs RESTful e GraphQL</li>
 			<li>Gerenciamento de dados PostgreSQL e MongoDB</li>
 			<li>Liderança técnica de equipe de 4 desenvolvedores</li>
 			<li>Redução de 40% no tempo de carregamento das aplicações</li>
 		</ul>
-		<h3>Desenvolvedor Full Stack Pleno</h3>
-		<p><b>WebDev Agency</b> - São Paulo, SP</p>
-		<p>Janeiro 2019 - Fevereiro 2021</p>
-		<ul>
+		<h3 class="cargo_experiencia">Desenvolvedor Full Stack Pleno</h3>
+		<p class="empresas_experiencias">WebDev Agency - São Paulo, SP</p>
+		<p class="periodo_experiencia">Janeiro 2019 - Fevereiro 2021</p>
+		<ul class="lista_experiencia">
 			<li>Desenvolvimento de aplocações wev usando React e Node.js</li>
 			<li>Implementação de APIs RESTful e GraphQL</li>
 			<li>Gerenciamento de dados PostgreSQL e MongoDB</li>
 			<li>Liderança técnica de equipe de 4 desenvolvedores</li>
 			<li>Redução de 40% no tempo de carregamento das aplicações</li>
 		</ul>
+		</div>
 	</body>
 </html>
