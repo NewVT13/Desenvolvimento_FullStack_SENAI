@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ifood</title>
+
+		<style>
+			.container_principal {
+				width: 70%;
+				margin: 0 auto;
+			}
+			.container_menu {
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+				justify-content: space-between;
+				padding: 40px 32px;
+				background-color: #f7f7f7;
+			}
+			.logo {
+				width: 60px;
+				object-fit: contain;
+			}
+
+			.menu {
+				list-style: none;
+				display: flex;
+				gap: 15px;
+			}
+			.menu a {
+				text-decoration: none;
+				font-size: 16px;
+				color: #3e3e3e;
+			}
+			.criar_conta_link {
+				font-size: 16px;
+				color: #ea1d2c;
+				text-decoration: none;
+				margin-right: 10px;
+			}
+			.botão_entrar {
+				background-color: #ea1d2c;
+				width: 100px;
+				height: 44px;
+				border-radius: 4px;
+				border: none;
+				color: #fff;
+			}
+			.botão_entrar:hover {
+				cursor: pointer;
+				opacity: 0.8;
+			}
+			.container_titulo_principal {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				padding: 50px 0px 35px;
+			}
+			.container_titulo_principal h1 {
+				font-size: 42px;
+				margin: 15px;
+				color: #000;
+				font-weight: bold;
+			}
+			.container_titulo_principal p {
+				color: #717171;
+				margin: 0 0 16px;
+			}
+			.card_inicial {
+				width: 40%;
+				border-radius: 8px;
+				padding: 20px;
+			}
+			.card_inicial p {
+				font-size: 42px;
+				font-weight: bold;
+				color: #fff;
+			}
+			.card_inicial button {
+				width: 146px;
+				height: 36px;
+				background-color: #000;
+				color: #fff;
+				border-radius: 8px;
+			}
+			.bg_card_restaurante {
+				background-color: #ea1d2c;
+			}
+			.bg_card_mercado {
+				background-color: #b6d048;
+			}
+			.container_card_inicial {
+				display: flex;
+				justify-content: space-between;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container_principal">
+			<div class="container_menu">
+				<img src="./assets/IFood_logo.svg.png" alt="logo do ifood" class="logo" />
+				<ul class="menu">
+					<li><a href="#">Entregador</a></li>
+					<li><a href="#">Restaurante e Mercado</a></li>
+					<li><a href="#">Carreira</a></li>
+					<li><a href="#">Ifood card</a></li>
+					<li><a href="#">Empresas</a></li>
+				</ul>
+				<div>
+					<a class="criar_conta_link" href="#">Criar conta</a>
+					<button class="botão_entrar">Entrar</button>
+				</div>
+			</div>
+			<div class="container_titulo_principal">
+				<h1>Tudo pra facilitar seu dia a dia</h1>
+				<p>O que você precisa está aqui. Peça e receba onde estiver.</p>
+			</div>
+			<div class="container_card_inicial">
+				<div class="card_inicial bg_card_restaurante">
+					<p>Restaurante</p>
+					<button>Ver opções</button>
+				</div>
+				<div class="card_inicial bg_card_mercado">
+					<p>Mercado</p>
+					<button>Buscar lojas</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
