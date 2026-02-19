@@ -79,7 +79,20 @@
 				.separador{
 					border: 0.5px #3498bd solid;
 				}
-				
+				@media(max-width: 800px){
+					.container_informação_contato{
+						flex-direction: column;
+						align-items: center;
+					}
+				}
+				@media(min-width : 600px){
+					body{
+						background-color: black;
+					}
+					.separador{
+						border-color: red;
+					}
+				}
 		</style>
 	</head>
 	<body>
