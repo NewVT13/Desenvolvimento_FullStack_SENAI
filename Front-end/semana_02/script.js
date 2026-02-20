@@ -1,4 +1,5 @@
-function calcular() {
+function calcular(event) {
+	event.preventDefault();
 	var altura = parseFloat(document.getElementById("altura").value);
 	var peso = parseFloat(document.getElementById("peso").value);
 	//console.log(typeof peso);
@@ -34,3 +35,5 @@ function resetForm() {
 	document.getElementById("peso").value = "";
 	document.getElementById("resultado").style.display = "none";
 }
+
+document.getElementById("form_imc").addEventListener("submit", calcular);

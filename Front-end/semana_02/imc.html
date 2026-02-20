@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>IMC</title>
-		<script src="script.js"></script>
+		<link rel="stylesheet" href="iconis.css">
 		<style>
 			h1,
 			p {
@@ -79,29 +79,128 @@
 				background-color: #eff6ff;
 				border-radius: 8px;
 			}
+			table{
+  width:600px;
+  margin:40px auto;
+  border-collapse:collapse;
+  background:#f5f5f5;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+thead th{
+  text-align:left;
+  padding:18px 20px;
+  font-size:20px;
+}
+
+/* LINHAS */
+tbody td{
+  padding:14px 20px;
+  border-bottom:1px solid #ddd;
+}
+
+/* alinhar colunas */
+tbody td:last-child{
+  text-align:right;
+}
+
+/* primeira coluna com espaço para bolinha */
+tbody td:first-child{
+  position:relative;
+  padding-left:40px;
+}
+
+/* BOLINHAS */
+tbody tr td:first-child::before{
+  content:"";
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  position:absolute;
+  left:15px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* cores */
+tr.azul td:first-child::before{ background:#3b82f6; }
+tr.verde td:first-child::before{ background:#22c55e; }
+tr.amarelo td:first-child::before{ background:#eab308; }
+tr.laranja td:first-child::before{ background:#f97316; }
+tr.vermelho td:first-child::before{ background:#ef4444; }
+tr.vinho td:first-child::before{ background:#991b1b; }
+
+/* remove última linha */
+tbody tr:last-child td{
+  border-bottom:none;
+}
 		</style>
 	</head>
 	<body>
-		<div class="container_principal">
-			<h1 class="titulo">Calculadora de IMC</h1>
-			<p>Descubra seu Indice de Massa corporea</p>
-			<label class="label_imput" for="altura">Altura</label>
-			<input
-				placeholder="Digite sua altura"
-				class="imput"
-				type="number"
-				id="altura"
-			/>
-			<label class="label_imput" for="peso">Peso</label>
-			<input placeholder="Digite seu peso" class="imput" type="number" id="peso" />
-			<button class="botao_calcular" onclick="calcular()">Calcular</button>
-			<button onclick="resetForm()">Limpar</button>
+		<form id="form_imc">
+			<div class="container_principal">
+				<h1 class="titulo">Calculadora de IMC</h1>
+				<p>Descubra seu Indice de Massa corporea</p>
+				<label class="label_imput" for="altura">Altura</label>
+				<input
+					placeholder="Digite sua altura"
+					class="imput"
+					type="number"
+					step="any"
+					id="altura"
+				/>
+				<label class="label_imput" for="peso">Peso</label>
+				<input
+					placeholder="Digite seu peso"
+					class="imput"
+					type="number"
+					step="any"
+					id="peso"
+				/>
+				<button class="botao_calcular" type="submit"">Calcular</button>
+				<button onclick="resetForm()" type="button"><i class="material-icons icon-small">cleaning_services</i></button>
 
-			<div class="resultado" id="resultado">
-				<p>seu IMC é</p>
-				<p id="resultado_imc"></p>
-				<p id="resultado_descricao"></p>
+				<div class="resultado" id="resultado">
+					<p>seu IMC é</p>
+					<p id="resultado_imc"></p>
+					<p id="resultado_descricao"></p>
+				</div>
 			</div>
-		</div>
+		</form>
+		<table>
+			<thead>
+				<tr>
+					<th>Tabela de Classificação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="azul">
+					<td>Abaixo de 18,5</td>
+					<td>Abaixo do peso</td>
+				</tr>
+				<tr class="verde">
+					<td>18,5 - 24,9</td>
+					<td>Peso normal</td>
+				</tr>
+				<tr class="amarelo">
+					<td>25,0 - 29,9</td>
+					<td>Sobrepeso</td>
+				</tr>
+				<tr class="laranja">
+					<td>30,0 - 34,9</td>
+					<td>Obesidade Grau I</td>
+				</tr>
+				<tr class="vermelho">
+					<td>35,0 - 39,9</td>
+					<td>Obesidade Grau II</td>
+				</tr>
+				<tr class="vinho">
+					<td>40,0 ou mais</td>
+					<td>Obesidade Grau III</td>
+				</tr>
+			</tbody>
+		</table>
+			<script src="script.js"></script>
 	</body>
 </html>
