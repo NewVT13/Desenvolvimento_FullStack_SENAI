@@ -60,7 +60,16 @@
 				outline: none;
 			}
 			.botao_calcular {
-				width: 80%;
+				width: 75%;
+				height: 34px;
+				background-color: #0d9987;
+				border-radius: 4px;
+				color: #fff;
+				margin-top: 10px;
+				border: none;
+			}
+			.botao_reset{
+				width: 23%;
 				height: 34px;
 				background-color: #0d9987;
 				border-radius: 4px;
@@ -80,61 +89,61 @@
 				border-radius: 8px;
 			}
 			table{
-  width:600px;
-  margin:40px auto;
-  border-collapse:collapse;
-  background:#f5f5f5;
-  border-radius:8px;
-  overflow:hidden;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-}
-thead th{
-  text-align:left;
-  padding:18px 20px;
-  font-size:20px;
-}
+				width:600px;
+				margin:40px auto;
+				border-collapse:collapse;
+				background:#f5f5f5;
+				border-radius:8px;
+				overflow:hidden;
+				box-shadow:0 4px 12px rgba(0,0,0,0.15);
+				}
+				thead th{
+				text-align:left;
+				padding:18px 20px;
+				font-size:20px;
+				}
 
-/* LINHAS */
-tbody td{
-  padding:14px 20px;
-  border-bottom:1px solid #ddd;
-}
+				/* LINHAS */
+				tbody td{
+				padding:14px 20px;
+				border-bottom:1px solid #ddd;
+				}
 
-/* alinhar colunas */
-tbody td:last-child{
-  text-align:right;
-}
+				/* alinhar colunas */
+				tbody td:last-child{
+				text-align:right;
+				}
 
-/* primeira coluna com espaço para bolinha */
-tbody td:first-child{
-  position:relative;
-  padding-left:40px;
-}
+				/* primeira coluna com espaço para bolinha */
+				tbody td:first-child{
+				position:relative;
+				padding-left:40px;
+				}
 
-/* BOLINHAS */
-tbody tr td:first-child::before{
-  content:"";
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  position:absolute;
-  left:15px;
-  top:50%;
-  transform:translateY(-50%);
-}
+				/* BOLINHAS */
+				tbody tr td:first-child::before{
+				content:"";
+				width:12px;
+				height:12px;
+				border-radius:50%;
+				position:absolute;
+				left:15px;
+				top:50%;
+				transform:translateY(-50%);
+				}
 
-/* cores */
-tr.azul td:first-child::before{ background:#3b82f6; }
-tr.verde td:first-child::before{ background:#22c55e; }
-tr.amarelo td:first-child::before{ background:#eab308; }
-tr.laranja td:first-child::before{ background:#f97316; }
-tr.vermelho td:first-child::before{ background:#ef4444; }
-tr.vinho td:first-child::before{ background:#991b1b; }
+				/* cores */
+				tr.azul td:first-child::before{ background:#3b82f6; }
+				tr.verde td:first-child::before{ background:#22c55e; }
+				tr.amarelo td:first-child::before{ background:#eab308; }
+				tr.laranja td:first-child::before{ background:#f97316; }
+				tr.vermelho td:first-child::before{ background:#ef4444; }
+				tr.vinho td:first-child::before{ background:#991b1b; }
 
-/* remove última linha */
-tbody tr:last-child td{
-  border-bottom:none;
-}
+				/* remove última linha */
+				tbody tr:last-child td{
+				border-bottom:none;
+				}
 		</style>
 	</head>
 	<body>
@@ -159,7 +168,7 @@ tbody tr:last-child td{
 					id="peso"
 				/>
 				<button class="botao_calcular" type="submit"">Calcular</button>
-				<button onclick="resetForm()" type="button"><i class="material-icons icon-small">cleaning_services</i></button>
+				<button class="botao_reset" onclick="resetForm()" type="button"><i class="material-icons icon-small">cleaning_services</i></button>
 
 				<div class="resultado" id="resultado">
 					<p>seu IMC é</p>
