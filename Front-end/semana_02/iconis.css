@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* Estilos customizados para os ícones */
+.material-icons {
+	vertical-align: middle;
+	user-select: none;
+}
+
+.icon-small {
+	font-size: 18px;
+}
+
+.icon-medium {
+	font-size: 24px;
+}
+
+.icon-large {
+	font-size: 32px;
+}
+
+.icon-primary {
+	color: #3fbba3;
+}
+
+.icon-white {
+	color: white;
+}
+
+.icon-dark {
+	color: #333;
+}
