@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="reset.css" />
+		<style>
+			body {
+				background-color: #fcfbfc;
+				/*background-color: rgb(0, 0, 0);*/
+			}
+			h1 {
+				text-align: center;
+				font-size: 35px;
+				margin: 15px auto;
+			}
+			.conteiner_produtos {
+				display: flex;
+				gap: 10px;
+				flex-wrap: wrap;
+			}
+			.produto {
+				width: 250px;
+				background-color: #fff;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+			}
+
+			.produto img {
+				width: 100px;
+			}
+
+			.produto_info {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.produto_info h2 {
+				font-size: 20px;
+			}
+			.produto_info p {
+				color: #666565;
+				margin-bottom: 10px;
+			}
+			.produto span {
+				color: #20a12b;
+				font-size: 20px;
+				margin: 10px auto;
+			}
+			.produto_preco {
+				font-size: 25px;
+				margin-top: 10px;
+			}
+			.conteiner_botoes {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				margin-top: 20px;
+				margin-bottom: 10px;
+			}
+			.conteiner_botoes div {
+				display: flex;
+				margin-left: 10px;
+			}
+			.conteiner_botoes div button {
+				color: #20a12b;
+				font-size: 18px;
+			}
+			.botao_add {
+				background-color: #20a12b;
+				color: #fff;
+				font-size: 15px;
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Vegetais frescos</h1>
+
+		<div class="conteiner_produtos" id="elemento">
+			<div class="produto">
+				<img
+					src="https://images.tcdn.com.br/img/img_prod/763396/brocolis_japones_97_1_20200320111951.jpg"
+				/>
+				<div class="produto_info">
+					<h2>Brócules</h2>
+					<p>cada - aproximadamente 330g</p>
+				</div>
+				<span>La Manna Fresh</span>
+				<p class="produto_preco">R$ 1,98</p>
+				<div class="conteiner_botoes">
+					<div>
+						<button>-</button>
+						<button>+</button>
+					</div>
+					<button class="botao_add">Add 1 por R$1,98</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
