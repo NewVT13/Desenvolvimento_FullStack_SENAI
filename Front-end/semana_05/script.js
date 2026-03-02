@@ -49,16 +49,16 @@ produtos.forEach(function (meuItem) {
 				<p>cada - aproximadamente ${meuItem.peso}g</p>
 			</div>
 			<span>La Manna Fresh</span>
-			<p class="produto_preco">R$ ${meuItem.preco}</p>
+			<p class="produto_preco">R$ ${meuItem.preco.toFixed(2)}</p>
 			<div class="conteiner_botoes">
 				<div>
 					<button>-</button>
 					<button>+</button>
 				</div>
-				<button class="botao_add">Add 1 por ${meuItem.preco}</button>
+				<button class="botao_add">Add 1 por ${meuItem.preco.toFixed(2)}</button>
 			</div>
 		</div> `;
 	document
-		.getElementById("elemento")
-		.insertAdjacentHTML("afterbegin", meusItensHTML);
+		.getElementById("lista")
+		.insertAdjacentHTML("beforeend", meusItensHTML);
 });
