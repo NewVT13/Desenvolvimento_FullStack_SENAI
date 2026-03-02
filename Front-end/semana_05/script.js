@@ -1,22 +1,3 @@
-/* <div class="produto">
-			<img
-				src="https://images.tcdn.com.br/img/img_prod/763396/brocolis_japones_97_1_20200320111951.jpg"
-			/>
-			<div class="produto_info">
-				<h2>Brócules</h2>
-				<p>cada - aproximadamente 330g</p>
-			</div>
-			<span>La Manna Fresh</span>
-			<p class="produto_preco">R$ 1,98</p>
-			<div class="conteiner_botoes">
-				<div>
-					<button>-</button>
-					<button>+</button>
-				</div>
-				<button class="botao_add">Add 1 por R$1,98</button>
-			</div>
-		</div> */
-
 const produtos = [
 	{
 		id: 0,
