@@ -1,0 +1,136 @@
+var pets = [
+	{
+		id: 1,
+		nome: "fido",
+		genero: "macho",
+		idade: 2,
+		vacinado: false,
+		vacina: [],
+		cor: "caramelo",
+		tamanho: "grande",
+		tipo: "cachorro",
+	},
+	{
+		id: 2,
+		nome: "luna",
+		genero: "fêmea",
+		idade: 3,
+		vacinado: true,
+		vacina: ["raiva", "polivalente"],
+		cor: "preto",
+		tamanho: "médio",
+		tipo: "gato",
+	},
+	{
+		id: 3,
+		nome: "rex",
+		genero: "macho",
+		idade: 5,
+		vacinado: true,
+		vacina: ["raiva", "polivalente"],
+		cor: "marrom",
+		tamanho: "grande",
+		tipo: "cachorro",
+	},
+	{
+		id: 4,
+		nome: "mimi",
+		genero: "fêmea",
+		idade: 1,
+		vacinado: false,
+		vacina: [],
+		cor: "branco",
+		tamanho: "pequeno",
+		tipo: "gato",
+	},
+	{
+		id: 5,
+		nome: "bolt",
+		genero: "macho",
+		idade: 4,
+		vacinado: true,
+		vacina: ["raiva", "polivalente", "tosse_canina"],
+		cor: "cinza",
+		tamanho: "grande",
+		tipo: "cachorro",
+	},
+	{
+		id: 6,
+		nome: "bella",
+		genero: "fêmea",
+		idade: 2,
+		vacinado: true,
+		vacina: ["raiva"],
+		cor: "laranja",
+		tamanho: "pequeno",
+		tipo: "gato",
+	},
+	{
+		id: 7,
+		nome: "max",
+		genero: "macho",
+		idade: 3,
+		vacinado: true,
+		vacina: ["raiva", "polivalente"],
+		cor: "preto e branco",
+		tamanho: "médio",
+		tipo: "cachorro",
+	},
+	{
+		id: 8,
+		nome: "snowball",
+		genero: "fêmea",
+		idade: 1,
+		vacinado: false,
+		vacina: [],
+		cor: "branco",
+		tamanho: "pequeno",
+		tipo: "coelho",
+	},
+	{
+		id: 9,
+		nome: "shadow",
+		genero: "macho",
+		idade: 6,
+		vacinado: true,
+		vacina: ["raiva", "polivalente", "tosse_canina"],
+		cor: "preto",
+		tamanho: "grande",
+		tipo: "cachorro",
+	},
+	{
+		id: 10,
+		nome: "whiskers",
+		genero: "macho",
+		idade: 2,
+		vacinado: true,
+		vacina: ["raiva"],
+		cor: "laranja",
+		tamanho: "médio",
+		tipo: "gato",
+	},
+	{
+		id: 11,
+		nome: "daisy",
+		genero: "fêmea",
+		idade: 4,
+		vacinado: true,
+		vacina: ["raiva", "polivalente"],
+		cor: "marrom claro",
+		tamanho: "médio",
+		tipo: "cachorro",
+	},
+];
+
+var petBuscado = pets.find(p => p.id === 5); // função anonima resumida
+//o methodo find é usado para coisas especificas, pq ele retorna a primeira coisa encontrada.
+console.log(petBuscado);
+
+document.getElementById("form_pesquisa").addEventListener("submit", event => {
+	event.preventDefault();
+	var codigoDigitado = document.getElementById("codigo").value;
+	var petBuscado = pets.find(p => p.id === parseInt(codigoDigitado));
+	console.log(petBuscado);
+
+	document.getElementById("nome").innerText = `Nome: ${petBuscado.nome}`;
+});
