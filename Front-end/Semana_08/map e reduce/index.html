@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Map</title>
+		<script src="index.js" defer></script>
+		<style>
+			body {
+				background-color: #ccc;
+			}
+			.conteiner_resumo {
+				max-width: 700px;
+				margin: 40px auto;
+				padding: 10px;
+				border-radius: 8px;
+				border-left: 5px solid tomato;
+				background-color: #fff;
+			}
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			thead {
+				background-color: tomato;
+				color: #fff;
+				font-size: 18px;
+				border: none;
+			}
+			thead th {
+				border: none;
+			}
+			tbody tr td {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="conteiner_resumo">
+			<h1>Resumo do pedido</h1>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Nome</th>
+						<th>Preço</th>
+						<th>Unidade</th>
+						<th>SubTotal</th>
+					</tr>
+				</thead>
+				<tbody id="corpo_resumo"></tbody>
+			</table>
+			<p>O total da compra é R$ <span id="total"></span></p>
+		</div>
+	</body>
+</html>
