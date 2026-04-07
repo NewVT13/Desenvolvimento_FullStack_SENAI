@@ -1,0 +1,45 @@
+.container_home {
+	background-color: #fff;
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 5px;
+
+	display: flex;
+}
+.container_esquerda {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+
+	width: 70%;
+}
+
+.container_direita {
+	width: 30%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.container_input {
+	height: 34px;
+	border: 1px solid #ccc;
+	border-radius: 12px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 5px;
+	margin-bottom: 20px;
+}
+
+.container_input input {
+	width: 90%;
+	border: none;
+	outline: none;
+}
