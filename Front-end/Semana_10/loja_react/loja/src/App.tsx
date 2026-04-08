@@ -19,6 +19,13 @@ function App() {
 					<RiLockPasswordLine size={20} color="#ccc" />
 					<input placeholder="Password" />
 				</div>
+				<button className="botao_logar">Sing In</button>
+				<p>
+					new here?{" "}
+					<a className="link_criar_conta" href="">
+						Create an account
+					</a>
+				</p>
 			</div>
 		</div>
 	);
