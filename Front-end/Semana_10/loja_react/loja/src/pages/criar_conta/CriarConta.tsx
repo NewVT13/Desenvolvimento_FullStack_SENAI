@@ -4,12 +4,16 @@ import "./CriarConta.css";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 function CriarConta() {
 	const [nome, setNome] = useState("");
 	const [email, setEmail] = useState("");
 	const [senha, setSenha] = useState("");
 	const [opcao, setOpcao] = useState("");
+
+	const navagate = useNavigate();
+
 	async function cadastrar(event: React.SubmitEvent) {
 		try {
 			event.preventDefault();
@@ -26,7 +30,8 @@ function CriarConta() {
 				}),
 			});
 			if (resposta.ok === false) {
-				throw new Error();
+				const dadosErro = await resposta.json();
+				throw new Error(dadosErro.error);
 			}
 			Swal.fire({
 				icon: "success",
@@ -34,11 +39,13 @@ function CriarConta() {
 				text: "Agora você poderá fazer o login e desfrutar da plataforma",
 				confirmButtonText: "Tudo certo!",
 			});
-		} catch {
+			navagate("/");
+		} catch (error) {
+			const errorMessage = error ? error.message : "Erro desconhecido";
 			Swal.fire({
 				icon: "error",
 				title: "Ops!!",
-				text: "Não foi possível cadastrar seu usuario no momento!",
+				text: errorMessage,
 			});
 		}
 	}

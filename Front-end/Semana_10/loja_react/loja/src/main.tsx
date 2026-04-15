@@ -1,11 +1,19 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router";
 import "./index.css";
-import App from "./App.tsx";
-import CriarConta from "./pages/criar_conta/CriarConta.tsx";
+import Login from "./pages/Login/Login.tsx";
+import CriarConta from "./pages/Criar_conta/CriarConta.tsx";
+import Anuncios from "./pages/Anuncios/Anuncios.tsx";
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<CriarConta />
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Login />} />
+				<Route path="/criar_conta" element={<CriarConta />} />
+				<Route path="/anuncios" element={<Anuncios />} />
+			</Routes>
+		</BrowserRouter>
 	</StrictMode>
 );

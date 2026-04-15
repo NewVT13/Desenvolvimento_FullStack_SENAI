@@ -1,0 +1,25 @@
+.container_lista_anuncios {
+	max-width: 1020px;
+	background-color: #fff;
+	border-radius: 12px;
+	padding: 10px;
+}
+
+.container_lista_anuncios h1 {
+	text-align: center;
+}
+
+.tabela_anuncios {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.tabela_anuncios thead {
+	font-size: 20px;
+	background-color: #7a4df4;
+}
+
+.tabela_anuncios tbody tr {
+	text-align: center;
+	font-size: 18px;
+}
