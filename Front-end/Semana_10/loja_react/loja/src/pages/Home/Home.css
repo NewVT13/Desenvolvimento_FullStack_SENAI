@@ -1,0 +1,59 @@
+.conteiner_site {
+	max-width: 1200px;
+	padding: 5px;
+	margin: 40px auto;
+	background-color: #e7ebf0;
+	border-radius: 12px;
+	/* height: 100vh; */
+}
+.conteiner_titulo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 20px;
+}
+.botao_login {
+	background: linear-gradient(90deg, #5f43b2 0%, #7a4df4 100%);
+	color: #fff;
+	border-radius: 8px;
+	height: 34px;
+	border: none;
+	width: 120px;
+}
+.botao_login:active {
+	transform: translateY(1px) scale(0.98);
+	box-shadow: 0 2px 8px rgba(95, 67, 178, 0.35);
+	filter: brightness(0.95);
+}
+.conteiner_cards_principal {
+	display: flex;
+	flex-wrap: wrap;
+}
+.conteiner_card {
+	display: flex;
+	padding: 10px;
+}
+.conteiner_info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #fff;
+	width: 215px;
+}
+.conteiner_info a {
+	width: 120px;
+	height: 30px;
+	background-color: green;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	text-align: center;
+	text-decoration: none;
+}
+.conteiner_info FaWhatsapp {
+	padding: 20px;
+}
+.info_preco {
+	font-size: 35px;
+}

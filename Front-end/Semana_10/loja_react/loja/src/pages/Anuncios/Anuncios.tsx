@@ -1,6 +1,13 @@
+import anuncios from "../../mock/data";
 import "./Anuncios.css";
 
 function Anuncios() {
+	function formatarParaReal(valor: number) {
+		return new Intl.NumberFormat("pt-br", {
+			style: "currency",
+			currency: "BRL",
+		}).format(valor);
+	}
 	return (
 		<div className="container_lista_anuncios">
 			<h1>Menu anúncios</h1>
@@ -9,6 +16,7 @@ function Anuncios() {
 				<thead>
 					<tr>
 						<th>Id</th>
+						<th>Imagem</th>
 						<th>Nome</th>
 						<th>Valor</th>
 						<th>Situação</th>
@@ -16,13 +24,18 @@ function Anuncios() {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Action figure Pikachu</td>
-						<td>R$ 300</td>
-						<td>Não publicado</td>
-						<td></td>
-					</tr>
+					{anuncios.map(anuncio => (
+						<tr>
+							<td>{anuncio.id}</td>
+							<td>
+								<img width={30} src={anuncio.imagem} />
+							</td>
+							<td>{anuncio.nome}</td>
+							<td> {formatarParaReal(anuncio.valor)}</td>
+							<td>{anuncio.situacao}</td>
+							<td></td>
+						</tr>
+					))}
 				</tbody>
 			</table>
 		</div>
