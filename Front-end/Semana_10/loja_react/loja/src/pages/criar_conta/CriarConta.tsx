@@ -27,6 +27,7 @@ function CriarConta() {
 					name: nome,
 					password: senha,
 					email: email,
+					plan: opcao,
 				}),
 			});
 			if (resposta.ok === false) {

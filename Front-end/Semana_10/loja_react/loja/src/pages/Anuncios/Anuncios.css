@@ -24,3 +24,11 @@
 	text-align: center;
 	font-size: 18px;
 }
+.botao_novo_anuncio {
+	width: 180px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	margin-bottom: 0;
+}

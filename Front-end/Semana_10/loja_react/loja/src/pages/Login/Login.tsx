@@ -36,7 +36,7 @@ function Login() {
 				title: "Usuário encontrado",
 				text: "Seu usuário foi encontrado e vc já será redirecionado",
 			});
-			navegate("anuncio");
+			navegate("/anuncios");
 		} catch (error) {
 			const errorMessage = error ? error.message : "Erro desconhecido";
 			Swal.fire({
