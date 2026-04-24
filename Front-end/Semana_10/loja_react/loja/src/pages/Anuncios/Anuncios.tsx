@@ -20,7 +20,7 @@ function Anuncios() {
 
 	useEffect(() => {
 		getAnuncios();
-	});
+	}, []);
 	return (
 		<div className="container_lista_anuncios">
 			<h1>Menu anúncios</h1>
@@ -40,7 +40,7 @@ function Anuncios() {
 				</thead>
 				<tbody>
 					{anuncios.map(anuncio => (
-						<tr>
+						<tr key={anuncio.id}>
 							<td>{anuncio.id}</td>
 							<td>
 								<img width={30} src={anuncio.url} />
