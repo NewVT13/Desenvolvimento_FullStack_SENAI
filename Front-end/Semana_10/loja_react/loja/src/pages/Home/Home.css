@@ -1,17 +1,16 @@
 .conteiner_site {
-	max-width: 1200px;
-	padding: 5px;
-	margin: 40px auto;
+	width: min(1200px, 100%);
+	padding: 20px;
+	margin: 24px auto;
 	background-color: #e7ebf0;
 	border-radius: 12px;
-	/* height: 100vh; */
 }
 .conteiner_titulo {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
-	padding: 20px;
+	gap: 16px;
+	padding: 6px;
 }
 .botao_login {
 	background: linear-gradient(90deg, #5f43b2 0%, #7a4df4 100%);
@@ -20,6 +19,7 @@
 	height: 34px;
 	border: none;
 	width: 120px;
+	cursor: pointer;
 }
 .botao_login:active {
 	transform: translateY(1px) scale(0.98);
@@ -29,31 +29,88 @@
 .conteiner_cards_principal {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 14px;
 }
 .conteiner_card {
 	display: flex;
-	padding: 10px;
+	background-color: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	width: calc(50% - 7px);
 }
+
+.imagem_anuncio {
+	width: 200px;
+	height: 100%;
+	object-fit: cover;
+}
+
 .conteiner_info {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background-color: #fff;
-	width: 215px;
+	gap: 8px;
+	padding: 14px;
+	min-width: 0;
+	width: 100%;
 }
 .conteiner_info a {
-	width: 120px;
-	height: 30px;
+	width: fit-content;
+	min-width: 120px;
+	height: 34px;
 	background-color: green;
 	color: #fff;
 	border: none;
 	border-radius: 4px;
 	text-align: center;
 	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	padding: 0 12px;
 }
 .conteiner_info FaWhatsapp {
 	padding: 20px;
 }
 .info_preco {
-	font-size: 35px;
+	font-size: clamp(26px, 4vw, 35px);
+}
+.container_input {
+	background-color: #fff;
+}
+@media (max-width: 1024px) {
+	.conteiner_card {
+		width: 100%;
+	}
+}
+
+@media (max-width: 640px) {
+	.conteiner_site {
+		padding: 14px;
+		margin: 12px auto;
+	}
+
+	.conteiner_titulo {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.conteiner_titulo h1 {
+		margin: 0;
+		font-size: 1.5rem;
+	}
+
+	.conteiner_card {
+		flex-direction: column;
+	}
+
+	.imagem_anuncio {
+		width: 100%;
+		height: 200px;
+	}
+
+	.conteiner_info a {
+		width: 100%;
+	}
 }

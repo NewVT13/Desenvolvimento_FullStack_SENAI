@@ -2,9 +2,11 @@ import { Link } from "react-router";
 import { FaWhatsapp } from "react-icons/fa";
 import "./Home.css";
 import { useEffect, useState } from "react";
+import { BiSearch } from "react-icons/bi";
 
 function Home() {
 	const [anuncios, setAnuncios] = useState([]);
+	const [palavra, setPalavra] = useState("");
 
 	async function getAnuncios() {
 		const resposta = await fetch("http://localhost:3000/anuncios");
@@ -15,6 +17,12 @@ function Home() {
 	useEffect(() => {
 		getAnuncios();
 	}, []);
+
+	const anunciosFiltrados = anuncios.filter(
+		anuncio =>
+			anuncio.nome.toLowerCase().includes(palavra.toLowerCase()) ||
+			anuncio.preco.toString().includes(palavra)
+	);
 	return (
 		<div className="conteiner_site">
 			<div className="conteiner_titulo">
@@ -26,8 +34,12 @@ function Home() {
 					<button className="botao_login">Quero anunciar</button>
 				</Link>
 			</div>
+			<div className="container_input">
+				<BiSearch size={20} color="#ccc" />
+				<input value={palavra} onChange={e => setPalavra(e.target.value)} />
+			</div>
 			<div className="conteiner_cards_principal">
-				{anuncios.map(anuncio => (
+				{anunciosFiltrados.map(anuncio => (
 					<div className="conteiner_card" key={anuncio.id}>
 						<img src={anuncio.url} width={200} />
 						<div className="conteiner_info">

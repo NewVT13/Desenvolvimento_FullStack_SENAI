@@ -49,35 +49,35 @@ function Login() {
 	return (
 		<div className="container_home">
 			<div className="container_esquerda">
-				<h2>Welcome back!</h2>
-				<p>you can sign in to acess with yout existing account.</p>
+				<h2>Bem-vindo de volta!</h2>
+				<p>Você pode entrar com sua conta existente.</p>
 			</div>
 			<form onSubmit={realizarLogin} className="container_direita">
-				<h1>Sing in</h1>
+				<h1>Login</h1>
 				<div className="container_input">
 					<FaRegUser size={20} color="#ccc" />
 					<input
 						value={user}
 						onChange={e => setUser(e.target.value)}
-						placeholder="User email"
+						placeholder="E-mail"
 					/>
 				</div>
 				<div className="container_input">
 					<RiLockPasswordLine size={20} color="#ccc" />
 					<input
 						type="password"
-						placeholder="Password"
+						placeholder="Senha"
 						value={senha}
 						onChange={e => setSenha(e.target.value)}
 					/>
 				</div>
 				<button type="submit" className="botao_logar">
-					Sing In
+					Entrar
 				</button>
 				<p>
-					new here?{" "}
+					Novo por aqui?{" "}
 					<Link className="link_criar_conta" to="/criar_conta">
-						Create an account
+						Criar uma conta
 					</Link>
 				</p>
 			</form>

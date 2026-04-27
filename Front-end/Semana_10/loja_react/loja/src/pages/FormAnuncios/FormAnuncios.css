@@ -1,8 +1,8 @@
 .container_form_anuncios {
-	max-width: 1200px;
-	margin: 40px auto;
+	width: min(1200px, 100%);
+	margin: 24px auto;
 	gap: 10px;
-	height: 60vh;
+	min-height: 60vh;
 	display: flex;
 }
 
@@ -11,7 +11,7 @@
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
-	width: 30%;
+	width: 32%;
 	border-radius: 12px;
 	color: #fff;
 }
@@ -19,7 +19,7 @@
 .direita_container_form_anuncios {
 	background-color: #fff;
 	padding: 10px;
-	width: 70%;
+	width: 68%;
 	border-radius: 12px;
 }
 
@@ -32,4 +32,58 @@
 .containers_inputs {
 	display: flex;
 	gap: 25px;
+	flex-wrap: wrap;
+}
+
+.campo_metade {
+	width: 45%;
+}
+
+.campo_full {
+	width: 100%;
+}
+
+.container_input_full {
+	width: 100%;
+}
+
+.container_select {
+	margin-bottom: 20px;
+}
+
+.container_select select {
+	width: 100%;
+	height: 40px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+}
+
+@media (max-width: 900px) {
+	.container_form_anuncios {
+		flex-direction: column;
+	}
+
+	.esquerda_container_form_anuncios,
+	.direita_container_form_anuncios {
+		width: 100%;
+	}
+}
+
+@media (max-width: 640px) {
+	.container_form_anuncios {
+		margin: 12px auto;
+	}
+
+	.containers_inputs {
+		gap: 10px;
+	}
+
+	.campo_metade {
+		width: 100%;
+	}
+
+	.preview_anuncio {
+		font-size: 0.95rem;
+	}
 }

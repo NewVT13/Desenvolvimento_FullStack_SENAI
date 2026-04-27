@@ -1,7 +1,11 @@
 .container_home {
 	background-color: #fff;
-	max-width: 800px;
-	margin: 40px auto;
+	width: min(900px, 100%);
+	margin: 24px auto;
+	min-height: 520px;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 
 	display: flex;
 }
@@ -15,6 +19,8 @@
 	width: 55%;
 	background-color: #5f43b2;
 	color: #fff;
+	padding: 30px;
+	text-align: center;
 }
 
 .container_direita {
@@ -24,6 +30,7 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	padding: 30px;
 }
 .container_input {
 	height: 34px;
@@ -72,4 +79,22 @@
 	transform: translateY(1px) scale(0.98);
 	box-shadow: 0 2px 8px rgba(95, 67, 178, 0.35);
 	filter: brightness(0.95);
+}
+
+@media (max-width: 768px) {
+	.container_home {
+		flex-direction: column;
+		min-height: unset;
+	}
+
+	.container_esquerda,
+	.container_direita {
+		width: 100%;
+		padding: 22px 16px;
+	}
+
+	.container_input,
+	.botao_logar {
+		width: 100%;
+	}
 }

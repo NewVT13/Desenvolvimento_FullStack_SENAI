@@ -48,3 +48,9 @@ body {
 	border: none;
 	outline: none;
 }
+
+@media (max-width: 768px) {
+	#root {
+		padding: 12px;
+	}
+}
