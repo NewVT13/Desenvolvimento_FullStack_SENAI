@@ -1,12 +1,26 @@
-console.log("Funcionando");
 import express from "express";
-// const express = require("express"); import em commonjs
+import cors from "cors";
 
 const app = express();
 const PORTA_APP = 8888;
 
-app.get("/bemvindo", (request, response) => {
-	response.send("Entrei na sala bem vindo");
+let contadorProdutos = 1;
+const produtos = [];
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/produtos", (requeste, response) => {
+	response.send(produtos);
+});
+
+app.post("/produtos", (request, response) => {
+	const meusDados = request.body;
+	meusDados.id = contadorProdutos;
+	contadorProdutos++;
+	produtos.push(meusDados);
+
+	response.send({ mensagem: "Cadastrado com sucesso!" });
 });
 
 app.listen(PORTA_APP, () => {
