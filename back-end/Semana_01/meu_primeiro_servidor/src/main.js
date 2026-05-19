@@ -16,11 +16,24 @@ app.get("/produtos", (requeste, response) => {
 
 app.post("/produtos", (request, response) => {
 	const meusDados = request.body;
-	meusDados.id = contadorProdutos;
-	contadorProdutos++;
-	produtos.push(meusDados);
 
-	response.send({ mensagem: "Cadastrado com sucesso!" });
+	if (!meusDados.nome || typeof meusDados.nome !== "string") {
+		response.status(400).send({ error: "Nome é obrigatório" });
+	} else if (typeof meusDados.preco !== "number" || meusDados.preco <= 0) {
+		response.status(400).send({ error: "Preço deve ser númerico e maior 0" });
+	} else if (typeof meusDados.estoque !== "number" || meusDados.estoque < 0) {
+		response
+			.status(400)
+			.send({ error: "Estoque dever ser númerico e no mínimo 0" });
+	} else if (typeof meusDados.ativo !== "boolean") {
+		response.status(400).send({ error: "O status deve sert um booleano" });
+	} else {
+		meusDados.id = contadorProdutos;
+		contadorProdutos++;
+		produtos.push(meusDados);
+
+		response.status(201).send({ data: meusDados });
+	}
 });
 
 app.listen(PORTA_APP, () => {
