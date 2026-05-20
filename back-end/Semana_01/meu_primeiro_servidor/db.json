@@ -1,0 +1,12 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "geladeira",
+      "preco": 3244,
+      "ativo": true,
+      "estoque": 200
+    }
+  ],
+  "contadorProdutos": 2
+}

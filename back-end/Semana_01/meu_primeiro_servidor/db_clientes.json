@@ -1,0 +1,11 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Rosecleia",
+      "salario": 3200,
+      "habilitado": true
+    }
+  ],
+  "contador_clientes": 2
+}

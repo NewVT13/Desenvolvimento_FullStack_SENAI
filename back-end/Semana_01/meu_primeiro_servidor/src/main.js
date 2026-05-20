@@ -1,41 +1,44 @@
 import express from "express";
 import cors from "cors";
+import { JSONFile } from "lowdb/node";
+import { Low } from "lowdb";
 
 const app = express();
 const PORTA_APP = 8888;
 
-let contadorProdutos = 1;
-const produtos = [];
-
 app.use(cors());
 app.use(express.json());
 
-app.get("/produtos", (requeste, response) => {
-	response.send(produtos);
+const adapter = new JSONFile("db_clientes.json");
+const db = new Low(adapter, { clientes: [], contador_clientes: 1 });
+await db.read();
+
+app.get("/clientes", (requeste, response) => {
+	response.send(db.data.clientes);
 });
 
-app.post("/produtos", (request, response) => {
-	const meusDados = request.body;
+app.post("/clientes", (request, response) => {
+	const cliente = request.body;
 
-	if (!meusDados.nome || typeof meusDados.nome !== "string") {
+	if (!cliente.nome || typeof cliente.nome !== "string") {
 		response.status(400).send({ error: "Nome é obrigatório" });
-	} else if (typeof meusDados.preco !== "number" || meusDados.preco <= 0) {
-		response.status(400).send({ error: "Preço deve ser númerico e maior 0" });
-	} else if (typeof meusDados.estoque !== "number" || meusDados.estoque < 0) {
-		response
-			.status(400)
-			.send({ error: "Estoque dever ser númerico e no mínimo 0" });
-	} else if (typeof meusDados.ativo !== "boolean") {
-		response.status(400).send({ error: "O status deve sert um booleano" });
+	} else if (
+		!cliente.salario ||
+		typeof cliente.salario !== "number" ||
+		cliente.salario < 0
+	) {
+		response.status(400).send({ error: "O salario precisa ser positivo" });
+	} else if (typeof cliente.habilitado !== "boolean") {
+		response.status(400).send({ error: "O valor precisa ser True ou False" });
 	} else {
-		meusDados.id = contadorProdutos;
-		contadorProdutos++;
-		produtos.push(meusDados);
+		const novoCliente = { id: db.data.contador_clientes++, ...cliente };
+		db.data.clientes.push(novoCliente);
+		db.write();
 
-		response.status(201).send({ data: meusDados });
+		response.status(201).send({ data: cliente });
 	}
 });
 
 app.listen(PORTA_APP, () => {
-	console.log("Servidor Rodando");
+	console.log("Rodando o server");
 });
