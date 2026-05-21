@@ -1,11 +1,65 @@
 {
-  "clientes": [
-    {
-      "id": 1,
-      "nome": "Rosecleia",
-      "salario": 3200,
-      "habilitado": true
-    }
-  ],
-  "contador_clientes": 2
+	"clientes": [
+		{
+			"id": 1,
+			"nome": "Rosecleia",
+			"salario": 3200,
+			"habilitado": true
+		},
+		{
+			"id": 2,
+			"nome": "Carlos Silva",
+			"salario": 4500,
+			"habilitado": true
+		},
+		{
+			"id": 3,
+			"nome": "Mariana Oliveira",
+			"salario": 3800,
+			"habilitado": false
+		},
+		{
+			"id": 4,
+			"nome": "João Pereira",
+			"salario": 5200,
+			"habilitado": true
+		},
+		{
+			"id": 5,
+			"nome": "Ana Souza",
+			"salario": 2900,
+			"habilitado": true
+		},
+		{
+			"id": 6,
+			"nome": "Fernando Costa",
+			"salario": 6100,
+			"habilitado": false
+		},
+		{
+			"id": 7,
+			"nome": "Letícia Ramos",
+			"salario": 3350,
+			"habilitado": true
+		},
+		{
+			"id": 8,
+			"nome": "Rafael Gomes",
+			"salario": 2750,
+			"habilitado": true
+		},
+		{
+			"id": 9,
+			"nome": "Patrícia Lima",
+			"salario": 4700,
+			"habilitado": false
+		},
+		{
+			"id": 10,
+			"nome": "Bruno Almeida",
+			"salario": 4050,
+			"habilitado": true
+		}
+	],
+	"contador_clientes": 11
 }

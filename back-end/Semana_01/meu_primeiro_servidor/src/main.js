@@ -1,4 +1,4 @@
-import express from "express";
+import express, { request, response } from "express";
 import cors from "cors";
 import { JSONFile } from "lowdb/node";
 import { Low } from "lowdb";
@@ -13,10 +13,16 @@ const adapter = new JSONFile("db_clientes.json");
 const db = new Low(adapter, { clientes: [], contador_clientes: 1 });
 await db.read();
 
-app.get("/clientes", (requeste, response) => {
+app.get("/clientes", (request, response) => {
 	response.send(db.data.clientes);
 });
+app.get("/clientes/:id", (request, response) => {
+	const idCliente = Number(request.params.id);
+	const clientes = db.data.clientes;
 
+	const clienteEncontrado = clientes.find(cliente => cliente.id === idCliente);
+	response.send(clienteEncontrado);
+});
 app.post("/clientes", (request, response) => {
 	const cliente = request.body;
 

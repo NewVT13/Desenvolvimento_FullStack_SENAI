@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import cors from "cors";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
@@ -18,6 +18,19 @@ await db.read();
 ////////////////////////////////////////////////////////////
 app.get("/produtos", (requeste, response) => {
 	response.send(db.data.produtos);
+});
+
+app.get("/produtos/:id", (request, response) => {
+	const idProdutos = Number(request.params.id);
+	const produtos = db.data.produtos;
+
+	const produtoEncontrado = produtos.find(produto => produto.id === idProdutos);
+
+	if (!produtoEncontrado) {
+		response.status(404).send({ error: "Produto não encontrado na base" });
+	} else {
+		response.send(produtoEncontrado);
+	}
 });
 
 app.post("/produtos", (request, response) => {
