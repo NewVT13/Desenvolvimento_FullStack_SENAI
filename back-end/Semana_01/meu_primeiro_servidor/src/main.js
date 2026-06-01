@@ -2,6 +2,7 @@ import express, { request, response } from "express";
 import cors from "cors";
 import { JSONFile } from "lowdb/node";
 import { Low } from "lowdb";
+import Cliente from "./classes/Cliente.js";
 
 const app = express();
 const PORTA_APP = 8888;
@@ -24,23 +25,25 @@ app.get("/clientes/:id", (request, response) => {
 	response.send(clienteEncontrado);
 });
 app.post("/clientes", (request, response) => {
-	const cliente = request.body;
+	const meusDados = request.body;
 
-	if (!cliente.nome || typeof cliente.nome !== "string") {
+	if (!meusDados.nome || typeof meusDados.nome !== "string") {
 		response.status(400).send({ error: "Nome é obrigatório" });
 	} else if (
-		!cliente.salario ||
-		typeof cliente.salario !== "number" ||
-		cliente.salario < 0
+		!meusDados.salario ||
+		typeof meusDados.salario !== "number" ||
+		meusDados.salario < 0
 	) {
 		response.status(400).send({ error: "O salario precisa ser positivo" });
-	} else if (typeof cliente.habilitado !== "boolean") {
+	} else if (typeof meusDados.habilitado !== "boolean") {
 		response.status(400).send({ error: "O valor precisa ser True ou False" });
 	} else {
-		const novoCliente = { id: db.data.contador_clientes++, ...cliente };
-		db.data.clientes.push(novoCliente);
-		db.write();
-
+		const cliente = new Cliente(
+			meusDados.nome,
+			meusDados.salario,
+			meusDados.habilitado
+		);
+		cliente.criar();
 		response.status(201).send({ data: cliente });
 	}
 });
@@ -84,8 +87,8 @@ app.put("/clientes/:id", async (request, response) => {
 		return;
 	}
 	if (
-		dadosNoBody.habilitacao !== undefined &&
-		typeof dadosNoBody.habilitacao !== "boolean"
+		dadosNoBody.habilitado !== undefined &&
+		typeof dadosNoBody.habilitado !== "boolean"
 	) {
 		response.status(400).send({ error: "A habilitação deve ser um booleano" });
 		return;
@@ -109,8 +112,8 @@ app.put("/clientes/:id", async (request, response) => {
 					cliente.salario = dadosNoBody.salario;
 				}
 
-				if (dadosNoBody.habilitacao !== undefined) {
-					cliente.habilitacao = dadosNoBody.habilitacao;
+				if (dadosNoBody.habilitado !== undefined) {
+					cliente.habilitado = dadosNoBody.habilitado;
 				}
 			}
 			return cliente;

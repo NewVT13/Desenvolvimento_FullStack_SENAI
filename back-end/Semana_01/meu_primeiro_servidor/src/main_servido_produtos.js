@@ -2,6 +2,7 @@ import express, { response } from "express";
 import cors from "cors";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
+import Produto from "./classes/Produto.js";
 
 const app = express();
 const PORTA_APP = 8888;
@@ -47,11 +48,14 @@ app.post("/produtos", (request, response) => {
 	} else if (typeof meusDados.ativo !== "boolean") {
 		response.status(400).send({ error: "O status deve sert um booleano" });
 	} else {
-		const novoProduto = { id: db.data.contadorProdutos++, ...meusDados };
-		db.data.produtos.push(novoProduto);
-		db.write();
-
-		response.status(201).send({ data: meusDados });
+		const produto = new Produto(
+			meusDados.nome,
+			meusDados.preco,
+			meusDados.ativo,
+			meusDados.estoque
+		);
+		produto.criar();
+		response.status(201).send({ data: produto });
 	}
 });
 
